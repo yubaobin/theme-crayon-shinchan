@@ -6,6 +6,6 @@ export {}
 
 declare global {
   interface Window {
-    Alpine: Alpine;
+    Alpine: Alpine
   }
 }

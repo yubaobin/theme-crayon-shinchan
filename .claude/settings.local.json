@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm run lint)",
+      "Bash(pnpm add:*)",
+      "Bash(node:*)",
+      "Bash(pnpm run lint:*)",
+      "Bash(pnpm exec eslint:*)",
+      "Bash(pnpm run prettier)",
+      "Bash(pnpm run build-only)",
+      "Bash(pnpm run prepare)"
+    ]
+  }
+}

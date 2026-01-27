@@ -12,10 +12,10 @@ spec:
   homepage: https://github.com/yubaobin/theme-crayon-shinchan#readme
   repo: https://github.com/yubaobin/theme-crayon-shinchan
   issues: https://github.com/yubaobin/theme-crayon-shinchan/issues
-  settingName: "theme-crayon-shinchan-setting"
-  configMapName: "theme-crayon-shinchan-configMap"
-  version: "1.0.0"
-  requires: "2.0.0"
+  settingName: 'theme-crayon-shinchan-setting'
+  configMapName: 'theme-crayon-shinchan-configMap'
+  version: '1.0.0'
+  requires: '2.0.0'
   license:
-    - name: "GPL-3.0"
-      url: "https://github.com/yubaobin/theme-crayon-shinchan/blob/main/LICENSE"
+    - name: 'GPL-3.0'
+      url: 'https://github.com/yubaobin/theme-crayon-shinchan/blob/main/LICENSE'
