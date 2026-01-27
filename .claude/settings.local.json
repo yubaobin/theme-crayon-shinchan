@@ -8,7 +8,15 @@
       "Bash(pnpm exec eslint:*)",
       "Bash(pnpm run prettier)",
       "Bash(pnpm run build-only)",
-      "Bash(pnpm run prepare)"
+      "Bash(pnpm run prepare)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm run build)",
+      "Bash(npx tsc --showConfig)",
+      "Bash(pnpm up:*)",
+      "WebSearch",
+      "Bash(pnpm run dev)",
+      "Bash(npm run build-only:*)",
+      "Bash(npm ls:*)"
     ]
   }
 }
