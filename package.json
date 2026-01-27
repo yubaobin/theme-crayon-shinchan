@@ -1,6 +1,5 @@
 {
   "license": "GPL-3.0",
-  "type": "module",
   "scripts": {
     "build": "tsc && vite build && theme-package",
     "build-only": "tsc && vite build",

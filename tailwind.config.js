@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 import { addDynamicIconSelectors } from '@iconify/tailwind'
+import typography from '@tailwindcss/typography'
 export const content = ['./templates/**/*.html', './src/main.ts']
 export const theme = {
   extend: {}
 }
 export const plugins = [
-  require('@tailwindcss/typography'),
+  typography,
   addDynamicIconSelectors()
 ]
 export const safelist = [
