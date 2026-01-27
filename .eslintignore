@@ -1,1 +1,3 @@
 templates/**/*.html
+templates/assets
+node_modules
