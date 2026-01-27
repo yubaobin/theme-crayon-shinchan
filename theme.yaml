@@ -1,0 +1,21 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-crayon-shinchan
+spec:
+  displayName: 蜡笔小新主题
+  author:
+    name: ybb
+    website: https://github.com/halo-dev
+  description: A development starter theme with Vite Ecosystem for Halo
+  logo: http://www.ybaob.com/images/logo.png
+  homepage: https://github.com/halo-dev/theme-modern-starter#readme
+  repo: https://github.com/halo-dev/theme-modern-starter
+  issues: https://github.com/halo-dev/theme-modern-starter/issues
+  settingName: "theme-modern-starter-setting"
+  configMapName: "theme-modern-starter-configMap"
+  version: "1.0.0"
+  requires: "2.0.0"
+  license:
+    - name: "GPL-3.0"
+      url: "https://github.com/halo-dev/theme-modern-starter/blob/main/LICENSE"
