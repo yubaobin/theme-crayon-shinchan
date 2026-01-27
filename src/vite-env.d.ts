@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 
-import type { Alpine } from "alpinejs";
+import type { Alpine } from 'alpinejs'
 
-export {};
+export {}
 
 declare global {
   interface Window {
