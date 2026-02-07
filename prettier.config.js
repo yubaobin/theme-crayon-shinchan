@@ -7,6 +7,7 @@ export default {
   endOfLine: 'lf',
   singleQuote: true,
   semi: false,
+  htmlWhitespaceSensitivity: 'ignore',
   trailingComma: 'none',
   bracketSpacing: true
 }

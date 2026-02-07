@@ -1,21 +1,63 @@
-apiVersion: theme.halo.run/v1alpha1
+apiVersion: theme-crayon-shinchan/v1
 kind: Theme
 metadata:
   name: theme-crayon-shinchan
 spec:
-  displayName: 蜡笔小新主题
+  displayName: ybb
   author:
-    name: ybb
-    website: https://github.com/yubaobin/theme-crayon-shinchan
-  description: A theme for Halo
-  logo: http://www.ybaob.com/images/logo.png
-  homepage: https://github.com/yubaobin/theme-crayon-shinchan#readme
-  repo: https://github.com/yubaobin/theme-crayon-shinchan
-  issues: https://github.com/yubaobin/theme-crayon-shinchan/issues
-  settingName: 'theme-crayon-shinchan-setting'
-  configMapName: 'theme-crayon-shinchan-configMap'
-  version: '1.0.0'
-  requires: '2.0.0'
-  license:
-    - name: 'GPL-3.0'
-      url: 'https://github.com/yubaobin/theme-crayon-shinchan/blob/main/LICENSE'
+    name: Serenybbity
+  description: theme-crayon-shinchan 博客主题，简约优雅，支持亮色/暗色模式。
+  logo: /themes/theme-crayon-shinchan/assets/public/logo.webp
+  settingName: theme-crayon-shinchan-setting
+  configMapName: theme-crayon-shinchan-configmap
+  version: 1.1.9
+  requires: '>=2.0.0'
+  customTemplates:
+    page:
+      - name: default
+        description: 默认页面
+        screenshot:
+        file: page.html
+      - name: about
+        description: 关于我
+        screenshot:
+        file: about.html
+      - name: moments
+        description: 碎碎念
+        screenshot:
+        file: moments.html
+      - name: links
+        description: 朋友们
+        screenshot:
+        file: links.html
+      - name: guestbook
+        description: 留言板
+        screenshot:
+        file: guestbook.html
+      - name: projects
+        description: 我的项目
+        screenshot:
+        file: projects.html
+      - name: friends-circle
+        description: 朋友圈
+        screenshot:
+        file: friends-circle.html
+      - name: photos
+        description: 图库
+        screenshot:
+        file: photos.html
+    post:
+      - name: default
+        description: 默认文章
+        screenshot:
+        file: post.html
+    category:
+      - name: default
+        description: 默认分类
+        screenshot:
+        file: category.html
+    tag:
+      - name: default
+        description: 默认标签
+        screenshot:
+        file: tag.html
