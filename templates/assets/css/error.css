@@ -8,7 +8,8 @@
 
 .error-content {
     text-align: center;
-    max-width: 500px
+    max-width: 500px;
+    margin: auto
 }
 
 .error-code-gradient {

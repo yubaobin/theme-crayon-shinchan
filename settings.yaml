@@ -158,6 +158,10 @@ spec:
                   value: zhihu
                 - label: Telegram
                   value: telegram
+                - label: qq
+                  value: qq
+                - label: wx
+                  value: wx
                 - label: Discord
                   value: discord
               help: 选择对应的图标
@@ -572,11 +576,6 @@ spec:
           label: 建站历程
           value: "始建于 2024 年，纯个人兴趣建站，记录技术与生活。\n\n最初使用 Hexo 搭建，后迁移至 Halo，体验更现代化的博客系统。\n\n记录生活中的点滴，分享技术探索的心得，收藏有趣的发现，顺便当做备忘录。\n\n经历了多次改版、换主题、折腾服务器，一直靠热爱支撑，毕竟它承载着成长和回忆。"
           help: 显示在关于页面的"建站历程"部分
-        - $formkit: checkbox
-          name: showForeverBlog
-          label: 显示十年之约
-          value: true
-          help: 是否在关于页面显示十年之约倒计时组件
         - $formkit: checkbox
           name: showMascot
           label: 显示吉祥物
