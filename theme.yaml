@@ -1,16 +1,16 @@
-apiVersion: theme-crayon-shinchan/v1
+apiVersion: v1alpha1
 kind: Theme
 metadata:
   name: theme-crayon-shinchan
 spec:
   displayName: ybb
   author:
-    name: Serenybbity
+    name: ybb
   description: theme-crayon-shinchan 博客主题，简约优雅，支持亮色/暗色模式。
   logo: /themes/theme-crayon-shinchan/assets/public/logo.webp
   settingName: theme-crayon-shinchan-setting
   configMapName: theme-crayon-shinchan-configmap
-  version: 1.1.9
+  version: 1.0.0
   requires: '>=2.0.0'
   customTemplates:
     page:
