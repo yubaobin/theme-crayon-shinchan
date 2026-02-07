@@ -1,33 +1,149 @@
 <!doctype html>
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(content = ~{::content})}">
   <th:block th:fragment="content">
-    <div class="mx-auto flex h-screen w-96 flex-col items-center justify-center">
-      <ul class="w-full list-inside list-disc">
-        <li th:each="post : ${posts.items}">
-          <span class="icon-[tabler--box]"></span>
-          <a
-            th:text="${post.spec.title}"
-            th:href="${post.status.permalink}"
-            class="hover:text-gray-600 hover:underline"
-          ></a>
-        </li>
-      </ul>
-      <div class="mt-6 flex w-full items-center justify-between" th:if="${posts.hasPrevious() || posts.hasNext()}">
-        <a
-          th:href="@{${posts.prevUrl}}"
-          class="whitespace-no-wrap group inline-flex items-center justify-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-1 text-sm leading-6 font-medium text-gray-600 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none"
-        >
-          <span class="i-tabler-arrow-left text-lg transition-all group-hover:-translate-x-1"></span>
-          <span>上一页</span>
-        </a>
-        <span class="text-sm text-gray-900" th:text="${posts.page} +' / '+ ${posts.totalPages}"></span>
-        <a
-          th:href="@{${posts.nextUrl}}"
-          class="whitespace-no-wrap group inline-flex items-center justify-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-1 text-sm leading-6 font-medium text-gray-600 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none"
-        >
-          <span>下一页</span>
-          <span class="i-tabler-arrow-right text-lg transition-all group-hover:translate-x-1"></span>
-        </a>
+    <!-- 顶部装饰 -->
+    <div class="bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 py-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="mb-4 animate-bounce text-6xl">🍥</div>
+          <h1 class="mb-2 text-4xl font-bold text-white drop-shadow-lg">
+            <span th:text="${site.title}">蜡笔小新的博客</span>
+          </h1>
+          <p class="text-lg text-white drop-shadow" th:text="${site.subtitle}">欢迎来到小新的精彩世界！</p>
+          <div class="mt-4 flex items-center gap-2 text-white">
+            <span class="icon-[tabler--calendar]"></span>
+            <span th:text="${#dates.format(T(java.time.LocalDateTime).now(), 'yyyy年MM月dd日')}">2024年1月1日</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 搜索栏 -->
+    <div class="bg-white py-8 shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-md">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="搜索文章..."
+              class="w-full rounded-full border-2 border-yellow-200 py-3 pr-4 pl-12 transition-all focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 focus:outline-none"
+            />
+            <span class="absolute top-1/2 left-4 -translate-y-1/2 transform text-yellow-500">
+              <span class="icon-[tabler--search] text-xl"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 文章列表 -->
+    <div class="bg-gradient-to-b from-yellow-50 to-pink-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-8 text-center">
+            <h2 class="mb-2 text-3xl font-bold text-gray-800">
+              <span class="icon-[tabler--book] text-yellow-500"></span>
+              最新文章
+            </h2>
+            <div class="mx-auto h-1 w-24 bg-gradient-to-r from-yellow-400 to-pink-400"></div>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div
+              th:each="post : ${posts.items}"
+              class="transform overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <!-- 文章封面 -->
+              <div class="flex h-48 items-center justify-center bg-gradient-to-r from-yellow-200 to-pink-200">
+                <img
+                  th:src="${post.spec.cover}"
+                  th:alt="${post.spec.title}"
+                  th:if="${post.spec.cover}"
+                  class="h-full w-full object-cover"
+                />
+                <span th:unless="${post.spec.cover}" class="text-6xl">📝</span>
+              </div>
+
+              <!-- 文章内容 -->
+              <div class="p-6">
+                <!-- 分类标签 -->
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <span
+                    th:each="category : ${post.metadata.categories}"
+                    class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-medium text-yellow-800"
+                    th:text="${category.displayName}"
+                    >分类</span
+                  >
+                </div>
+
+                <!-- 标题 -->
+                <h3 class="mb-3 line-clamp-2 text-xl font-bold text-gray-800" th:text="${post.spec.title}">文章标题</h3>
+
+                <!-- 摘要 -->
+                <p class="mb-4 line-clamp-3 text-sm text-gray-600" th:text="${post.spec.description}">文章摘要...</p>
+
+                <!-- 元信息 -->
+                <div class="flex items-center justify-between text-xs text-gray-500">
+                  <div class="flex items-center gap-2">
+                    <span class="icon-[tabler--calendar]"></span>
+                    <span th:text="${#dates.format(post.spec.publishTime, 'MM-dd')}">01-01</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="icon-[tabler--clock]"></span>
+                    <span th:text="${post.metadata.wordCount} + '字'">500字</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 阅读按钮 -->
+              <div class="px-6 pb-6">
+                <a
+                  th:href="${post.status.permalink}"
+                  class="inline-flex items-center gap-2 text-sm font-medium text-pink-600 transition-colors hover:text-pink-700"
+                >
+                  <span>阅读全文</span>
+                  <span class="icon-[tabler--arrow-right] transition-transform group-hover:translate-x-1"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分页 -->
+          <div class="mt-12 flex items-center justify-center" th:if="${posts.hasPrevious() || posts.hasNext()}">
+            <div class="flex items-center gap-2 rounded-full bg-white p-1 shadow-md">
+              <a
+                th:if="${posts.hasPrevious()}"
+                th:href="@{${posts.prevUrl}}"
+                class="flex items-center gap-1 rounded-full px-4 py-2 transition-colors hover:bg-yellow-100"
+              >
+                <span class="icon-[tabler--arrow-left]"></span>
+                <span>上一页</span>
+              </a>
+              <span class="px-4 py-2 font-medium text-gray-700" th:text="${posts.page} +' / '+ ${posts.totalPages}"
+                >1 / 5</span
+              >
+              <a
+                th:if="${posts.hasNext()}"
+                th:href="@{${posts.nextUrl}}"
+                class="flex items-center gap-1 rounded-full px-4 py-2 transition-colors hover:bg-yellow-100"
+              >
+                <span>下一页</span>
+                <span class="icon-[tabler--arrow-right]"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部装饰 -->
+    <div class="bg-gradient-to-r from-purple-300 via-pink-300 to-yellow-300 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="mb-4 text-5xl">💕</div>
+          <p class="text-lg font-medium text-white">感谢阅读！记得常来看看哦～</p>
+          <p class="mt-2 text-sm text-white"><span class="icon-[tabler--heart]"></span> 用❤️打造的博客</p>
+        </div>
       </div>
     </div>
   </th:block>

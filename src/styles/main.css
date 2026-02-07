@@ -1,7 +1,111 @@
-body {
-  background: #f2f2f2;
+/* 蜡笔小新主题颜色 */
+:root {
+  --crayon-yellow: #FFD700;
+  --crayon-pink: #FF69B4;
+  --crayon-blue: #87CEEB;
+  --crayon-green: #90EE90;
+  --crayon-purple: #9370DB;
 }
 
-ul {
-  list-style: decimal;
+body {
+  font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 50%, #FFCDD2 100%);
+  min-height: 100vh;
+}
+
+/* 可爱风格按钮 */
+.cute-button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #fbbf24, #ec4899);
+  color: white;
+  border-radius: 9999px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cute-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* 卡片悬停效果 */
+.cute-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cute-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* 标题装饰 */
+.cute-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #fbbf24, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 动画效果 */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* 波浪背景 */
+.wave-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.3)" d="M0,128L48,138.7C96,149,192,171,288,181.3C384,192,480,192,576,165.3C672,139,768,85,864,85.3C960,85,1056,139,1152,154.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+  background-size: 50% 100%;
+  animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
 }
