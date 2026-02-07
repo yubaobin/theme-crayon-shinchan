@@ -9,7 +9,7 @@
               th:if="${theme.config.footer != null && theme.config.footer.startYear != null && !#strings.isEmpty(theme.config.footer.startYear)}"
               th:text="${theme.config.footer.startYear + (#temporals.format(#temporals.createNow(), 'yyyy') != theme.config.footer.startYear ? ' - ' + #temporals.format(#temporals.createNow(), 'yyyy') : '')}"
             >
-              2024
+              2025
             </span>
             <span
               th:unless="${theme.config.footer != null && theme.config.footer.startYear != null && !#strings.isEmpty(theme.config.footer.startYear)}"
@@ -140,6 +140,7 @@
     th:text="${theme.config.footer.termsContent}"
   ></div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script th:src="@{/assets/js/lib/marked.min.js}"></script>
   <script>
     function openLegalModal(type) {
       var modal = document.getElementById('legalModal')

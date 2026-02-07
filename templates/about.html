@@ -169,7 +169,7 @@
         <div class="about-history" style="white-space: pre-line" th:text="${theme.config.about.siteHistory}">
           <p>
             始建于
-            <span class="highlight">2024年</span>
+            <span class="highlight">2025年</span>
             ，纯个人兴趣建站，记录技术与生活。
           </p>
           <p>
@@ -220,7 +220,7 @@
                 <div class="sponsor-meta">
                   <span class="sponsor-amount" th:text="|¥${sponsor.all_sum_amount}|">¥0</span>
                   <span class="sponsor-time" th:text="${afdianFinder.parseTime(sponsor.last_pay_time)}">
-                    2024-01-01
+                    2025-01-01
                   </span>
                 </div>
               </div>
@@ -262,6 +262,12 @@
           联系我
         </h2>
         <div class="about-contact">
+          <th:block th:if="${theme.config.about != null && theme.config.about.qq != null}">
+            <span class="contact-link" th:text="${'QQ: ' + theme.config.about.qq}"></span>
+          </th:block>
+          <th:block th:if="${theme.config.about != null && theme.config.about.wx != null}">
+            <span class="contact-link" th:text="${'微信: ' + theme.config.about.wx}"></span>
+          </th:block>
           <th:block th:if="${theme.config.social != null && theme.config.social.links != null}">
             <th:block th:each="link : ${theme.config.social.links}">
               <a

@@ -10,7 +10,7 @@ spec:
   logo: /themes/theme-crayon-shinchan/assets/public/logo.webp
   settingName: theme-crayon-shinchan-setting
   configMapName: theme-crayon-shinchan-configmap
-  version: 1.0.0
+  version: 1.0.1
   requires: '>=2.0.0'
   customTemplates:
     page:
