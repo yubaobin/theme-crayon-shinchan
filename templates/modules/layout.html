@@ -22,7 +22,7 @@
     <title
       th:text="${title != null ? title + ' - ' + (theme.config.basic.title ?: site.title) : (theme.config.basic.title ?: site.title)}"
     >
-      Serenity-Grace
+      ybb-Grace
     </title>
     <meta name="description" th:content="${theme.config.basic.description ?: site.subtitle}" />
     <meta
@@ -44,12 +44,12 @@
       rel="icon"
       th:href="${theme.config.basic.favicon != null && !#strings.isEmpty(theme.config.basic.favicon) ? theme.config.basic.favicon : (site.favicon != null && !#strings.isEmpty(site.favicon) ? site.favicon : '/themes/theme-crayon-shinchan/assets/public/ics6.webp')}"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" th:href="@{/assets/fonts/qweather-icons.css}" />
     <link rel="preload" th:href="@{/assets/css/base.css}" as="style" />
+    <link rel="stylesheet" th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}" />
     <link rel="stylesheet" th:href="@{/assets/css/base.css}" />
     <link rel="stylesheet" th:href="@{/assets/css/aos.css}" />
+    <script th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"></script>
     <th:block th:replace="${head}" />
     <script th:inline="javascript">
       ;(function () {
@@ -67,10 +67,10 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Serenity's Blog",
+        "name": "YBB's Blog",
         "url": "",
         "description": "",
-        "author": { "@type": "Person", "name": "Serenity" }
+        "author": { "@type": "Person", "name": "ybb" }
       }
     </script>
   </head>

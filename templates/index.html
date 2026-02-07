@@ -89,8 +89,9 @@
           <line x1="1" y1="12" x2="3" y2="12" />
           <line x1="21" y1="12" x2="23" y2="12" />
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg
-        ><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
       </button>
@@ -104,7 +105,7 @@
           <div class="welcome-logo-ring"></div>
           <div class="welcome-logo-ring welcome-logo-ring-2"></div>
         </div>
-        <h1 class="welcome-title" th:text="${theme.config.hero.name ?: site.title}">Serenity</h1>
+        <h1 class="welcome-title" th:text="${theme.config.hero.name ?: site.title}">ybb</h1>
         <p class="welcome-tagline" th:text="${theme.config.hero.tagline ?: '热爱可抵岁月漫长'}">热爱可抵岁月漫长</p>
         <p class="welcome-bio" th:text="${theme.config.hero.bio ?: '专注于前端开发，热爱开源，喜欢分享技术与生活。'}">
           专注于前端开发，热爱开源，喜欢分享技术与生活。
@@ -205,9 +206,7 @@
                 data-aos-delay="100"
                 th:if="${theme.config.hero.enableTypewriter == true}"
               >
-                <span class="typewriter-text" th:attr="data-text=${theme.config.hero.name ?: site.title}">
-                  Serenity
-                </span>
+                <span class="typewriter-text" th:attr="data-text=${theme.config.hero.name ?: site.title}">ybb</span>
                 <span class="typewriter-cursor"></span>
               </h1>
               <h1
@@ -217,7 +216,7 @@
                 th:if="${theme.config.hero.enableTypewriter != true}"
                 th:text="${theme.config.hero.name ?: site.title}"
               >
-                Serenity
+                ybb
               </h1>
               <p
                 class="hero-tagline"

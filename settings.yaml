@@ -10,7 +10,7 @@ spec:
         - $formkit: text
           name: title
           label: 站点标题
-          value: "Serenity's Blog"
+          value: "YBB's Blog"
           help: 显示在浏览器标签和页脚
         - $formkit: attachment
           name: favicon
@@ -19,7 +19,7 @@ spec:
         - $formkit: text
           name: author
           label: 作者名称
-          value: 'Serenity'
+          value: 'ybb'
           help: 用于关于页面和文章署名
         - $formkit: textarea
           name: description
@@ -61,7 +61,7 @@ spec:
         - $formkit: text
           name: name
           label: 显示名称
-          value: 'Serenity'
+          value: 'ybb'
           help: 显示在首页头像下方
         - $formkit: checkbox
           name: enableTypewriter
@@ -643,7 +643,7 @@ spec:
         - $formkit: text
           name: text
           label: 水印文字
-          value: 'Serenity'
+          value: 'ybb'
           help: 自定义水印显示的文字，默认为站点标题
         - $formkit: select
           name: source
@@ -733,7 +733,7 @@ spec:
         - $formkit: text
           name: ownerName
           label: 站点名称
-          value: "Serenity's Blog"
+          value: "YBB's Blog"
           help: 友链申请区域显示的站点名称，留空则使用基本设置中的站点标题
         - $formkit: text
           name: ownerUrl
