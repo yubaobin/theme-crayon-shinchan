@@ -1498,7 +1498,7 @@ body:has(.welcome-overlay:not(.hidden)) {
 }
 
 [data-theme="light"] .hero-name {
-    background: linear-gradient(135deg, #33A6B8, #A8D8B9);
+    background: linear-gradient(135deg, #FFB6C1, #FFD1DC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text
@@ -1516,7 +1516,7 @@ body:has(.welcome-overlay:not(.hidden)) {
 }
 
 [data-theme="light"] .typewriter-cursor {
-    background: linear-gradient(135deg, #33A6B8, #A8D8B9)
+    background: linear-gradient(135deg, #FFB6C1, #FFD1DC)
 }
 
 @keyframes blink {
@@ -1539,10 +1539,6 @@ body:has(.welcome-overlay:not(.hidden)) {
     max-width: 450px
 }
 
-[data-theme="light"] .hero-tagline {
-    color: rgba(30, 30, 30, 0.8)
-}
-
 .hero-role {
     display: inline-block;
     font-family: var(--font-mono);
@@ -1555,7 +1551,7 @@ body:has(.welcome-overlay:not(.hidden)) {
 }
 
 [data-theme="light"] .hero-role {
-    background: rgba(51, 166, 184, 0.1)
+    background: rgba(255, 182, 193, 0.1)
 }
 
 .hero-bio {
@@ -1811,7 +1807,7 @@ body:has(.welcome-overlay:not(.hidden)) {
 }
 
 [data-theme="light"] .btn-primary:hover {
-    box-shadow: 0 8px 20px rgba(51, 166, 184, 0.3)
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3)
 }
 
 .btn-secondary {

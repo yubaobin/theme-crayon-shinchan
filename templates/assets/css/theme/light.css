@@ -1,0 +1,43 @@
+/* Light theme variables */
+[data-theme="light"] {
+    --color-bg: #ffffff;
+    --color-bg-soft: #f8f8f8;
+    --color-bg-mute: #f0f0f0;
+    --color-text: #1a1a1a;
+    --color-text-secondary: rgba(0, 0, 0, 0.6);
+    --color-text-muted: rgba(0, 0, 0, 0.4);
+    --color-accent: #FFB6C1;
+    --color-accent-secondary: #FFD1DC;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-hover: rgba(0, 0, 0, 0.15);
+    --link-submit-widget-modal-layer-color: rgba(0, 0, 0, 0.4);
+    --link-submit-widget-form-button-text-color: #ffffff
+}
+
+/* Light theme specific styles */
+html[data-theme='light'],
+html[data-theme='light'] body,
+[data-theme='light'],
+.light {
+    color-scheme: light;
+    --halo-cw-primary-1-color: #FFB6C1;
+    --halo-cw-primary-2-color: rgba(255, 182, 193, 0.6);
+    --halo-cw-primary-3-color: rgba(255, 182, 193, 0.3);
+    --halo-cw-text-1-color: #1a1a1a;
+    --halo-cw-text-2-color: #FFB6C1;
+    --halo-cw-text-3-color: rgba(255, 182, 193, 0.6);
+    --halo-cw-muted-1-color: #FFB6C1;
+    --halo-cw-muted-2-color: rgba(255, 182, 193, 0.3);
+    --halo-cw-muted-3-color: rgba(255, 182, 193, 0.15);
+    --halo-cw-base-rounded: 10px;
+    --halo-cw-avatar-rounded: 50%;
+    --halo-cw-avatar-size: 40px;
+    --halo-cw-base-font-size: 15px;
+    --halo-cw-base-font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --halo-cw-emoji-picker-rgb-color: 26, 26, 26;
+    --halo-cw-emoji-picker-rgb-accent: 255, 182, 193;
+    --halo-cw-emoji-picker-rgb-background: 255, 255, 255;
+    --halo-cw-emoji-picker-rgb-input: 248, 248, 248;
+    --halo-cw-emoji-picker-color-border: rgba(0, 0, 0, 0.08);
+    --halo-cw-emoji-picker-color-border-over: rgba(0, 0, 0, 0.15)
+}
